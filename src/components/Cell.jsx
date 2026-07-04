@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {assetUrl} from "../utility/AssetUrl";
 
 export default class Cell extends React.Component {
     constructor(props, context) {
@@ -41,7 +42,7 @@ export default class Cell extends React.Component {
     render() {
 
         return <div className={"cell " + this.getRarity()} onClick={() => this.onClicked()}>
-            <img src={"/assets/icons/perks/" + this.props.type + ".png"} />
+            <img src={assetUrl("/assets/icons/perks/" + this.props.type + ".png")} />
             <span className="cell-title">{this.props.variant}</span>
         </div>;
     }

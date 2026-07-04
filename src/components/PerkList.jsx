@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import ReactTooltip from "react-tooltip";
 
 import BuildModel from "../models/BuildModel";
+import {assetUrl} from "../utility/AssetUrl";
 
 export default class PerkList extends React.Component {
     getPerkLevelClass(perkValue) {
@@ -67,8 +68,8 @@ export default class PerkList extends React.Component {
         let perks = this.props.perks.map(perk =>
             <React.Fragment key={perk.name}>
                 <li className={this.getPerkLevelClass(perk.value)} data-tip data-for={"PerkTooltip-" + perk.name}>
-                    <img className="perk-icon" src={"/assets/icons/perks/" +
-                        BuildModel.findPerkByName(perk.name).type + ".png"} />
+                    <img className="perk-icon" src={assetUrl("/assets/icons/perks/" +
+                        BuildModel.findPerkByName(perk.name).type + ".png")} />
                     <div className="perk-data-wrapper">
                         <div className="perk-title">+{perk.value} {perk.name}</div>
                         {this.renderPerkEffect(perk.name, perk.value)}

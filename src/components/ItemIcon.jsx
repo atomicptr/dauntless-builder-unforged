@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypeUtility from "../utility/PropTypeUtility";
+import {assetUrl} from "../utility/AssetUrl";
 
 import LazyLoad from "react-lazy-load";
 
@@ -9,14 +10,14 @@ export default class ItemIcon extends React.Component {
         super(props, context);
 
         this.state = {
-            src: this.props.item.icon,
+            src: props.item.icon ? assetUrl(props.item.icon) : null,
             triedDefaultIcon: false,
             errorPersistsAfterDefault: false
         };
     }
 
     componentDidUpdate(prevProps) {
-        let icon = prevProps.item.icon;
+        let icon = prevProps.item.icon ? assetUrl(prevProps.item.icon) : null;
 
         if(icon !== this.state.src) {
             this.setState({src: icon, triedDefaultIcon: false, errorPersistsAfterDefault: false});

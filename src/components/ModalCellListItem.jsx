@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PropTypeUtility from "../utility/PropTypeUtility";
+import {assetUrl} from "../utility/AssetUrl";
 
 export default class ModalCellListItem extends React.Component {
 
@@ -32,7 +33,7 @@ export default class ModalCellListItem extends React.Component {
 
         let variants = Object.keys(item.variants).filter(this.filterRarity.bind(this)).map(v =>
             <div key={v} className={"cell " + item.variants[v].rarity} onClick={() => this.props.onSelected("Cell", v)}>
-                <img src={"/assets/icons/perks/" + item.slot + ".png"} />
+                <img src={assetUrl("/assets/icons/perks/" + item.slot + ".png")} />
                 <div className="cell-perk-wrapper">
                     <div className="cell-title">{v}</div>
                     <div className="perks">{getDescriptions(item.variants[v])}</div>

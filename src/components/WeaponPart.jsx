@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {assetUrl} from "../utility/AssetUrl";
 
 export default class WeaponPart extends React.Component {
 
@@ -33,7 +34,7 @@ export default class WeaponPart extends React.Component {
             <div className="item-wrapper">
                 <div className="item weapon-part no-cells" onClick={() => this.onClicked()}>
                     <div className="weapon-part-image-wrapper">
-                        <img src={part.icon} />
+                        <img src={assetUrl(part.icon)} />
                     </div>
                     <div className="item-data">
                         <h3 className="item-title">{part.name}</h3>

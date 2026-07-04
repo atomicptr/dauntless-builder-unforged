@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import BuildModel from "../models/BuildModel";
+import {assetUrl} from "../utility/AssetUrl";
 
 export default class PerkString extends React.Component {
 
     render() {
         const perkList = this.props.perks.map((perk, index) => <span key={perk.name} className="perk-string-items">
-            +{perk.value} <img src={"/assets/icons/perks/" + BuildModel.findPerkByName(perk.name).type + ".png"} /> {perk.name}
+            +{perk.value} <img src={assetUrl("/assets/icons/perks/" + BuildModel.findPerkByName(perk.name).type + ".png")} /> {perk.name}
             {index !== this.props.perks.length - 1 ? ", " : ""}
         </span>);
 

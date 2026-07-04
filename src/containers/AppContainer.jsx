@@ -16,6 +16,7 @@ import Footer from "../components/Footer";
 
 import "styles/main.scss";
 import SettingsUtility from "../utility/SettingsUtility";
+import {assetUrl} from "../utility/AssetUrl";
 
 export default class AppContainer extends React.Component {
 
@@ -63,7 +64,7 @@ export default class AppContainer extends React.Component {
                 <meta property="og:title" content="Dauntless Builder" />
                 <meta property="og:description" content="Create and share Dauntless builds with your friends!" />
                 <meta property="og:url" content={siteOrigin} />
-                <meta property="og:image" content={siteOrigin + "/assets/icon.png"} />
+                <meta property="og:image" content={assetUrl("/assets/icon.png")} />
 
                 <script type='application/ld+json'>{`
                     {
@@ -71,7 +72,7 @@ export default class AppContainer extends React.Component {
                         "@type": "WebSite",
                         "name": "Dauntless Builder",
                         "description": "Create and share Dauntless builds with your friends!",
-                        "image": "${siteOrigin}/assets/icon.png",
+                        "image": "${assetUrl("/assets/icon.png")}",
                         "url": "${siteOrigin}"
                     }
                 `}</script>
@@ -80,7 +81,7 @@ export default class AppContainer extends React.Component {
                 <React.Fragment>
                     <div className={"primary-container container " + this.getExtraClasses()}>
                         <Link to="/">
-                            <img className="logo" src="/assets/logo.png" />
+                            <img className="logo" src={assetUrl("/assets/logo.png")} />
                         </Link>
 
                         <div className="card">

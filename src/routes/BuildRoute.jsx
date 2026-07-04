@@ -28,6 +28,8 @@ import WeaponPartSelectModal from "../components/WeaponPartSelectModal";
 import WeaponPart from "../components/WeaponPart";
 import BondSelectModal from "../components/BondSelectModal";
 
+import {assetUrl} from "../utility/AssetUrl";
+
 const DAUNTLESS_BUILD_COLLECTION_BASEURL = "https://www.dauntless-build-collection.com/#/maintenance/create?hash=";
 
 export default class BuildRoute extends React.Component {
@@ -475,17 +477,15 @@ export default class BuildRoute extends React.Component {
     }
 
     getMetaImage() {
-        const siteOrigin = window.location.origin;
-
         if(this.state.build.weapon_name) {
             const weapon = BuildModel.findWeapon(this.state.build.weapon_name);
 
             if(weapon.icon) {
-                return siteOrigin + weapon.icon;
+                return assetUrl(weapon.icon);
             }
         }
 
-        return siteOrigin + "/assets/icon.png";
+        return assetUrl("/assets/icon.png");
     }
 
     render() {

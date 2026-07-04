@@ -5,6 +5,7 @@ import BuildModel from "../models/BuildModel";
 import PerkString from "./PerkString";
 import ElementalAffinities from "./ElementalAffinities";
 import PropTypeUtility from "../utility/PropTypeUtility";
+import {assetUrl} from "../utility/AssetUrl";
 
 export default class ItemData extends React.Component {
 
@@ -98,7 +99,7 @@ export default class ItemData extends React.Component {
 
             cellLine = <div className="cell-slots">{cells.map(cell =>
                 <span key={"CellLine_" + cell + (cellLineCounter++)} className="cell-line">
-                    <img className="cell-icon" src={"/assets/icons/perks/" + cell + ".png"} /> {cell}
+                    <img className="cell-icon" src={assetUrl("/assets/icons/perks/" + cell + ".png")} /> {cell}
                 </span>
             )}</div>;
         }

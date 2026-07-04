@@ -4,6 +4,7 @@ import ItemUtility from "../utility/ItemUtility";
 import PropTypeUtility from "../utility/PropTypeUtility";
 import BuildModel from "../models/BuildModel";
 import LazyLoad from "react-lazy-load";
+import {assetUrl} from "../utility/AssetUrl";
 
 export default class UniqueEffects extends React.Component {
 
@@ -20,7 +21,7 @@ export default class UniqueEffects extends React.Component {
                         <div className="item part-unique-effect no-cells">
                             {uniqueEffect.icon ?
                                 (<LazyLoad className="image-icon-wrapper" width={100} height={100} offsetVertical={500}>
-                                    <img src={uniqueEffect.icon} />
+                                    <img src={assetUrl(uniqueEffect.icon)} />
                                 </LazyLoad>) : null}
                             <div className="item-data">
                                 <strong>{this.props.item.name} {uniqueEffect.title || "Unique Effect"}</strong>: <br/>

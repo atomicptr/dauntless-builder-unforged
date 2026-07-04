@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ItemUtility from "../utility/ItemUtility";
+import {assetUrl} from "../utility/AssetUrl";
 
 export default class RepeaterPart extends React.Component {
 
@@ -21,7 +22,7 @@ export default class RepeaterPart extends React.Component {
         if(part.elemental) {
             elemental = <span className="elementals">
                 <span className="elemental elemental-strength">
-                    +&nbsp;<img src={"/assets/icons/elements/" + part.elemental + ".png"} />
+                    +&nbsp;<img src={assetUrl("/assets/icons/elements/" + part.elemental + ".png")} />
                     <span className="only-desktop">&nbsp;{part.elemental}</span>
                 </span>
             </span>;
@@ -31,7 +32,7 @@ export default class RepeaterPart extends React.Component {
             <div className="item-wrapper">
                 <div className="item repeater-part no-cells" onClick={() => this.onClicked()}>
                     <div className="repeater-image-wrapper">
-                        <img src={part.icon} />
+                        <img src={assetUrl(part.icon)} />
                     </div>
                     <div className="item-data">
                         <h3 className="item-title">{part.name} {ItemUtility.levelString(level)}</h3>
