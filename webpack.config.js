@@ -7,7 +7,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, "dist"),
         libraryTarget: "umd",
-        filename: "[name].js"
+        filename: "[name].js",
+        hashFunction: "sha256"
     },
     module: {
         rules: [
@@ -30,6 +31,8 @@ module.exports = {
         ],
     },
    optimization: {
+        concatenateModules: false,
+        minimize: false,
         splitChunks: {
             chunks: "all",
             automaticNameDelimiter: "-"

@@ -8,23 +8,17 @@ that your npm is working properly. (Test using ``$ npm version``)
 In your copy of the **dauntless-builder** directory, use the following in your shell:
 
 ```shell
-# First we need to install yarn via:
-npm install -g yarn
-
 # Install/update all dependencies via
-yarn
+npm install
 
 # If it's a clean install or there were changes to data in the last pull you'll need to do a full build once
-yarn build
+npm run build
 
 # Then rebuilding assets can be done with
-yarn build-dev
-
-# Optional: you can also watch/build data...
-# yarn build-dev --watch
+npm run build-dev
 
 # Next run your webserver via
-yarn dev
+npm run dev
 ```
 
 Done, you have a version of this app running on localhost:4000.

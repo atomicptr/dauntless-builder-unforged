@@ -1,3 +1,11 @@
+# Dauntless Builder Unforged
+
+This is the repository of Dauntless Builder from a time before "Dauntless Reforged" released, please head over to the new repository here:
+
+- [https://github.com/atomicptr/dauntless-builder](https://github.com/atomicptr/dauntless-builder)
+
+----
+
 # dauntless-builder
 
 Create and share Dauntless builds with your friends!
@@ -12,9 +20,9 @@ New version coming soon... In the meantime you can check out the old Documentati
 
 You can access the data via the following URLs:
 
-* https://www.dauntless-builder.com/data.json - The data
-* https://www.dauntless-builder.com/meta.json - Meta data, with a hash (to check if the data has changed), a timestamp etc.
-* https://www.dauntless-builder.com/map/names.json - The ID to Name map
+* https://unforged.dauntless-builder.com/data.json - The data
+* https://unforged.dauntless-builder.com/meta.json - Meta data, with a hash (to check if the data has changed), a timestamp etc.
+* https://unforged.dauntless-builder.com/map/names.json - The ID to Name map
 
 ## Assets
 

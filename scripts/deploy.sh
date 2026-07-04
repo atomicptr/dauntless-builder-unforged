@@ -11,7 +11,9 @@ rsync -r assets/ deploy/assets/
 mkdir -p deploy/dist/
 cp dist/*.js deploy/dist/
 cp *.html deploy/
-cp misc/* deploy/
+cp misc/_redirects deploy/
+cp misc/robots.txt deploy/
+cp misc/sitemap.xml deploy/
 
 ### copy data files to deploy
 mkdir -p deploy/map/

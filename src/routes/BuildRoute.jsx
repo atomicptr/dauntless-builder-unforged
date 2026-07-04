@@ -50,7 +50,7 @@ export default class BuildRoute extends React.Component {
 
         // redirect all v1 builds to seperate v1 website
         if (BuildModel.version(buildData) === 1) {
-            window.location.href = "https://v1.dauntless-builder.com/b/" + buildData;
+            window.location.href = window.location.origin + "/";
         }
 
         if (BuildModel.version(buildData) === 2) {
@@ -475,15 +475,17 @@ export default class BuildRoute extends React.Component {
     }
 
     getMetaImage() {
+        const siteOrigin = window.location.origin;
+
         if(this.state.build.weapon_name) {
             const weapon = BuildModel.findWeapon(this.state.build.weapon_name);
 
             if(weapon.icon) {
-                return `https://www.dauntless-builder.com${weapon.icon}`;
+                return siteOrigin + weapon.icon;
             }
         }
 
-        return "https://www.dauntless-builder.com/assets/icon.png";
+        return siteOrigin + "/assets/icon.png";
     }
 
     render() {
